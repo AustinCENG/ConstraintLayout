@@ -29,14 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myWebView = (WebView) findViewById(R.id.webview);
-        myRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        myEditText = (EditText) findViewById(R.id.editText3);
+        findAllViews();   // find all the views on the layout
+        gotoWebsite("www.yahoo.ca");   // go to a default home page.
+        closeKeyboard();   // close the keyboard when the page starts.
 
-        gotoWebsite("www.yahoo.ca");
-        closeKeyboard();
-        // Method 1 to add ClickEvent Listener to a View.
-        // How to do it in program??
+        // Method 1 to add ClickEvent Listener to a Button or any other views.
         RadioButton mRadioButton = (RadioButton) findViewById(R.id.radioButton1);
         mRadioButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Add the onkey event listener to the edittext.
         myEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -61,11 +59,20 @@ public class MainActivity extends AppCompatActivity {
         });
    }
 
-    // Method 2 to add ClickEvent Listener to a View. Add it from the layout design.
+    public void findAllViews(){
+        myWebView = (WebView) findViewById(R.id.webview);
+        myRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        myEditText = (EditText) findViewById(R.id.editText3);
+    }
+
+    // Method 2 to add ClickEvent Listener to a View. Add it from the layout design directly.
     public void Radio2Click(View v){
         gotoWebsite("www.humber.ca");
         myRadioGroup.check(R.id.radioButton2);
     }
+
+
+
 
     public void gotoWebsite(String url){
         myRadioGroup.clearCheck();
