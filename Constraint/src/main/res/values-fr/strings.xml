@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="teststring">"C'est un test "</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="easy_app">"Je suis une application simple! "</string>
+    <string name="next_page">"Page suivante "</string>
+    <string name="second_page_message">"Je suis la deuxième page! "</string>
+    <string name="title_activity_second">"Deuxième activité "</string>
+    <string name="URL">Input URL</string>
+    <string name="app_name">ConstraintLayout</string>
+</resources>
